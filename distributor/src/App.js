@@ -1,9 +1,9 @@
-import Body from './Homepage'
+import Homepage from './Homepage'
 
 function App() {
     return (
         <div>
-            <Body />
+            <Homepage />
         </div>
     )
 }
