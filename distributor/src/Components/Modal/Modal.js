@@ -1,4 +1,9 @@
 //TO DO - Add submit functionality with Axios
+import React, { useState } from 'react'
+import ModalPage1 from './Modal_Pages/recepie_page'
+import ModalPage2 from './Modal_Pages/ingredient_page'
+import { Button, Container } from 'react-bootstrap'
+export const ContextProvider = React.createContext(null)
 
 const ModalPages = () => {
     const [show, setShow] = useState(false)
@@ -11,51 +16,46 @@ const ModalPages = () => {
 
     const nextPage = () => setPage(2)
 
-    const submit = () => {
-        setPage(1), setShow(false)
-    }
+    const submit = () => [setPage(1), setShow(false)]
 
     return (
-        <>
+        <Container>
             <Button variant="primary" onClick={handleShow}>
                 Launch demo modal
             </Button>
-            {page == 1 ? (
-                <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        Woohoo, you're reading this text in a modal!
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
-                            Close
-                        </Button>
-                        <Button variant="warning" onClick={nextPage}>
-                            Next
-                        </Button>
-                    </Modal.Footer>
-                </Modal>
+
+            {page === 1 ? (
+                <ContextProvider
+                    value={{
+                        handleClose,
+                        handleShow,
+                        nextPage,
+                        submit,
+                        page,
+                        setPage,
+                        show,
+                        setShow,
+                    }}
+                >
+                    <ModalPage1 />
+                </ContextProvider>
             ) : (
-                <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        Woohoo, you're reading this text in a modal number 2!
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="danger" onClick={handleClose}>
-                            Cancel
-                        </Button>
-                        <Button variant="warning" onClick={submit}>
-                            Submit
-                        </Button>
-                    </Modal.Footer>
-                </Modal>
+                <ContextProvider
+                    value={{
+                        handleClose,
+                        handleShow,
+                        nextPage,
+                        submit,
+                        page,
+                        setPage,
+                        show,
+                        setShow,
+                    }}
+                >
+                    <ModalPage2 />
+                </ContextProvider>
             )}
-        </>
+        </Container>
     )
 }
 
