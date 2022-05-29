@@ -32,7 +32,7 @@ const ModalPages = () => {
                         <Button variant="secondary" onClick={handleClose}>
                             Close
                         </Button>
-                        <Button variant="primary" onClick={nextPage}>
+                        <Button variant="warning" onClick={nextPage}>
                             Next
                         </Button>
                     </Modal.Footer>
@@ -46,10 +46,10 @@ const ModalPages = () => {
                         Woohoo, you're reading this text in a modal number 2!
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
+                        <Button variant="danger" onClick={handleClose}>
                             Cancel
                         </Button>
-                        <Button variant="primary" onClick={submit}>
+                        <Button variant="warning" onClick={submit}>
                             Submit
                         </Button>
                     </Modal.Footer>
