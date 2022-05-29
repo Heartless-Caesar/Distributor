@@ -1,34 +1,19 @@
+import { Nav, Navbar, Container } from 'react-bootstrap'
+
 const Navbar = () => {
     return (
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-            <div className="container-fluid">
-                <div>
-                    <div className="collapse navbar-collapse">
-                        <ul className="navbar-nav">
-                            <a className="navbar-brand" href="#Home">
-                                Distributor
-                            </a>
-
-                            <li className="nav-item">
-                                <a className="nav-link active" href="#Home">
-                                    Home
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link active" href="#Catalog">
-                                    Catalog
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link active" href="#About">
-                                    About
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </nav>
+        <Navbar expand="sm" bg="dark">
+            <Container fluid>
+                <Navbar.Brand>Store Name Here</Navbar.Brand>
+                <Navbar.Collapse>
+                    <Nav className="me-auto">
+                        <Nav.Link href="#Home">Home</Nav.Link>
+                        <Nav.Link href="#Catalog">Catalog</Nav.Link>
+                        <Nav.Link href="#About">About</Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
     )
 }
 

@@ -1,13 +1,16 @@
+import { Card } from 'react-bootstrap'
+
 const Card = () => {
     return (
-        <div className="card p-2">
-            <h2 className="card-title">Title</h2>
-            <div className="card-body"></div>
-            <p className="card-text">
-                Some description here acting as a placeholder
-            </p>
+        <Card>
+            <Card.Title className="card-title">Title</Card.Title>
+            <Card.Body>
+                <Card.Text>
+                    Some description here acting as a placeholder
+                </Card.Text>
+            </Card.Body>
             <button className="btn btn-primary ">View more</button>
-        </div>
+        </Card>
     )
 }
 

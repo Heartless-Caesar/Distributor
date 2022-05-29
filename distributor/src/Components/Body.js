@@ -1,21 +1,19 @@
 import Card from './Card'
+import { Col, Row } from 'react-bootstrap'
 
 const Body = () => {
     return (
-        <div className="row mt-4 p-3">
-            <div className="col">
+        <Row>
+            <Col>
                 <Card />
-            </div>
-            <div className="col">
+            </Col>
+            <Col>
                 <Card />
-            </div>
-            <div className="col">
+            </Col>
+            <Col>
                 <Card />
-            </div>
-            <div className="col">
-                <Card />
-            </div>
-        </div>
+            </Col>
+        </Row>
     )
 }
 

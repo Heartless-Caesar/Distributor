@@ -1,54 +1,59 @@
 import { useState } from 'react'
 import Data from '../../Assets/Data'
+import { Carousel, Container } from 'react-bootstrap'
 
 const Carousel = () => {
     const [data, setData] = useState(Data)
 
     return (
-        <div
-            id="carouselExampleControls"
-            className="carousel slide "
-            data-bs-ride="carousel"
-        >
-            <div className="carousel-inner">
-                {data.map((x) => {
-                    const { id, Title, Image, Description, Price } = x
+        <Container>
+            <Carousel>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100"
+                        src="https://images.pexels.com/photos/10334838/pexels-photo-10334838.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        alt="First slide"
+                    />
+                    <Carousel.Caption>
+                        <h3>First slide label</h3>
+                        <p>
+                            Nulla vitae elit libero, a pharetra augue mollis
+                            interdum.
+                        </p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100"
+                        src="https://images.pexels.com/photos/12125084/pexels-photo-12125084.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        alt="Second slide"
+                    />
 
-                    return (
-                        <div key={id} className="carousel-item">
-                            <h2>{Title}</h2>
-                            <img src={Image} alt="Food image" />
-                            <p>{Description}</p>
-                            <div>{Price}</div>
-                        </div>
-                    )
-                })}
-            </div>
-            <button
-                className="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselExampleControls"
-                data-bs-slide="prev"
-            >
-                <span
-                    className="carousel-control-prev-icon"
-                    aria-hidden="true"
-                ></span>
-                <span className="visually-hidden">Previous</span>
-            </button>
-            <button
-                className="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselExampleControls"
-                data-bs-slide="next"
-            >
-                <span
-                    className="carousel-control-next-icon"
-                    aria-hidden="true"
-                ></span>
-                <span className="visually-hidden">Next</span>
-            </button>
-        </div>
+                    <Carousel.Caption>
+                        <h3>Second slide label</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit.
+                        </p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100"
+                        src="https://images.pexels.com/photos/10404283/pexels-photo-10404283.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                        alt="Third slide"
+                    />
+
+                    <Carousel.Caption>
+                        <h3>Third slide label</h3>
+                        <p>
+                            Praesent commodo cursus magna, vel scelerisque nisl
+                            consectetur.
+                        </p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+            </Carousel>
+        </Container>
     )
 }
 
