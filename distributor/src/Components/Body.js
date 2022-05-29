@@ -1,19 +1,24 @@
-import Card from './Card'
-import { Col, Row } from 'react-bootstrap'
+import CardComponent from './Card'
+import { Col, Row, Container } from 'react-bootstrap'
 
 const Body = () => {
     return (
-        <Row>
-            <Col>
-                <Card />
-            </Col>
-            <Col>
-                <Card />
-            </Col>
-            <Col>
-                <Card />
-            </Col>
-        </Row>
+        <Container className="mt-5">
+            <Row>
+                <Col>
+                    <CardComponent />
+                </Col>
+                <Col>
+                    <CardComponent />
+                </Col>
+                <Col>
+                    <CardComponent />
+                </Col>
+                <Col>
+                    <CardComponent />
+                </Col>
+            </Row>
+        </Container>
     )
 }
 

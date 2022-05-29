@@ -1,12 +1,9 @@
-import { useState } from 'react'
-import Data from '../../Assets/Data'
+//import Data from '../../Assets/Data'
 import { Carousel, Container } from 'react-bootstrap'
-
-const Carousel = () => {
-    const [data, setData] = useState(Data)
-
+import './Carousel.css'
+const CarouselComponent = () => {
     return (
-        <Container>
+        <Container className="mt-4 mb-4">
             <Carousel>
                 <Carousel.Item>
                     <img
@@ -57,4 +54,4 @@ const Carousel = () => {
     )
 }
 
-export default Carousel
+export default CarouselComponent

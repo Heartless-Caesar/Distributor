@@ -1,6 +1,6 @@
 import { Card } from 'react-bootstrap'
 
-const Card = () => {
+const CardComponent = () => {
     return (
         <Card>
             <Card.Title className="card-title">Title</Card.Title>
@@ -14,4 +14,4 @@ const Card = () => {
     )
 }
 
-export default Card
+export default CardComponent

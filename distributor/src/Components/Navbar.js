@@ -1,8 +1,8 @@
 import { Nav, Navbar, Container } from 'react-bootstrap'
 
-const Navbar = () => {
+const NavbarComponent = () => {
     return (
-        <Navbar expand="sm" bg="dark">
+        <Navbar expand="sm" bg="dark" variant="dark">
             <Container fluid>
                 <Navbar.Brand>Store Name Here</Navbar.Brand>
                 <Navbar.Collapse>
@@ -17,4 +17,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+export default NavbarComponent
