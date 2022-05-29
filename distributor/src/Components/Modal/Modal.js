@@ -1,3 +1,5 @@
+//TO DO - Add submit functionality with Axios
+
 const ModalPages = () => {
     const [show, setShow] = useState(false)
 
@@ -8,6 +10,11 @@ const ModalPages = () => {
     const handleShow = () => setShow(true)
 
     const nextPage = () => setPage(2)
+
+    const submit = () => {
+        setPage(1), setShow(false)
+    }
+
     return (
         <>
             <Button variant="primary" onClick={handleShow}>
@@ -42,7 +49,7 @@ const ModalPages = () => {
                         <Button variant="secondary" onClick={handleClose}>
                             Cancel
                         </Button>
-                        <Button variant="primary" onClick={nextPage}>
+                        <Button variant="primary" onClick={submit}>
                             Submit
                         </Button>
                     </Modal.Footer>
