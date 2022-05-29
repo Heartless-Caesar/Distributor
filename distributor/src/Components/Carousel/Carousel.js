@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import CarouselItem from './Carousel_item'
 import Data from '../../Assets/Data'
 
 const Carousel = () => {
@@ -8,16 +7,17 @@ const Carousel = () => {
     return (
         <div
             id="carouselExampleControls"
-            className="carousel slide"
+            className="carousel slide "
             data-bs-ride="carousel"
         >
             <div className="carousel-inner">
                 {data.map((x) => {
-                    const { id, Title, Description, Price } = x
+                    const { id, Title, Image, Description, Price } = x
 
                     return (
                         <div key={id} className="carousel-item">
                             <h2>{Title}</h2>
+                            <img src={Image} alt="Food image" />
                             <p>{Description}</p>
                             <div>{Price}</div>
                         </div>
