@@ -14,3 +14,8 @@ theming that will be present with the Kook branding.
 
 - React-Bootstrap : Carousel
 - React-Bootstrap : Modals
+
+### Soon
+
+- Screenshots of main interface
+- Screenshots of Modals
