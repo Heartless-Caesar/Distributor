@@ -10,7 +10,6 @@ const Homepage = () => {
         <>
             <NavbarComponent />
             <CarouselComponent />
-            <ModalPages />
             <Body />
             <Footer />
         </>

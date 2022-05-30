@@ -1,60 +1,37 @@
 //TO DO - Add submit functionality with Axios
 import React, { useState } from 'react'
-import ModalPage1 from './Modal_Pages/recepie_page'
-import ModalPage2 from './Modal_Pages/ingredient_page'
-import { Button, Container } from 'react-bootstrap'
+import { Button, Container, Modal } from 'react-bootstrap'
+
 export const ContextProvider = React.createContext(null)
 
 const ModalPages = () => {
     const [show, setShow] = useState(false)
 
-    const [page, setPage] = useState(1)
-
     const handleClose = () => setShow(false)
-
     const handleShow = () => setShow(true)
 
-    const nextPage = () => setPage(2)
-
-    const submit = () => [setPage(1), setShow(false)]
-
     return (
-        <Container>
-            <Button variant="primary" onClick={handleShow}>
+        <Container className="d-grid gap-2">
+            <Button variant="primary" onClick={handleShow} size="lg">
                 Launch demo modal
             </Button>
 
-            {page === 1 ? (
-                <ContextProvider
-                    value={{
-                        handleClose,
-                        handleShow,
-                        nextPage,
-                        submit,
-                        page,
-                        setPage,
-                        show,
-                        setShow,
-                    }}
-                >
-                    <ModalPage1 />
-                </ContextProvider>
-            ) : (
-                <ContextProvider
-                    value={{
-                        handleClose,
-                        handleShow,
-                        nextPage,
-                        submit,
-                        page,
-                        setPage,
-                        show,
-                        setShow,
-                    }}
-                >
-                    <ModalPage2 />
-                </ContextProvider>
-            )}
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Modal heading</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    Woohoo, you're reading this text in a modal!
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Close
+                    </Button>
+                    <Button variant="primary" onClick={handleClose}>
+                        Save Changes
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </Container>
     )
 }
