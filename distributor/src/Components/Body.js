@@ -2,6 +2,7 @@ import CardComponent from './Card'
 import { Col, Row, Container } from 'react-bootstrap'
 import ModalPages from './Modal/Modal'
 import ModalFilter from './Modal/SingleModal'
+import FeaturedItems from './Featured/FeaturedItems'
 
 const Body = () => {
     return (
@@ -29,6 +30,9 @@ const Body = () => {
                 <Col>
                     <CardComponent />
                 </Col>
+            </Row>
+            <Row>
+                <FeaturedItems />
             </Row>
         </Container>
     )
