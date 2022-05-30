@@ -13,7 +13,7 @@ const ModalPages = () => {
     return (
         <Container className="d-grid gap-2">
             <Button variant="primary" onClick={handleShow} size="lg">
-                Launch demo modal
+                Launch add modal
             </Button>
             {modalState === 1 ? (
                 <Modal show={show} onHide={handleClose}>

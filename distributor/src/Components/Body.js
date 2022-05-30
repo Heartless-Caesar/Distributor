@@ -1,6 +1,8 @@
 import CardComponent from './Card'
 import { Col, Row, Container } from 'react-bootstrap'
 import ModalPages from './Modal/Modal'
+import ModalFilter from './Modal/SingleModal'
+
 const Body = () => {
     return (
         <Container className="mt-5 mb-5">
@@ -10,7 +12,7 @@ const Body = () => {
                         <ModalPages />
                     </Col>
                     <Col>
-                        <ModalPages />
+                        <ModalFilter />
                     </Col>
                 </Row>
             </Container>
