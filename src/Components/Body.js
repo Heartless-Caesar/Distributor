@@ -18,6 +18,9 @@ const Body = () => {
                 </Row>
             </Container>
             <Row className="mt-5">
+                <Container className="text-center h2">Categorias</Container>
+            </Row>
+            <Row className="mt-5">
                 <Col>
                     <CardComponent />
                 </Col>
@@ -31,8 +34,22 @@ const Body = () => {
                     <CardComponent />
                 </Col>
             </Row>
+            <Row className="mt-5">
+                <Container className="text-center h2">Destaques</Container>
+            </Row>
             <Row>
-                <FeaturedItems />
+                <Col>
+                    <FeaturedItems />
+                </Col>
+                <Col>
+                    <FeaturedItems />
+                </Col>
+                <Col>
+                    <FeaturedItems />
+                </Col>
+                <Col>
+                    <FeaturedItems />
+                </Col>
             </Row>
         </Container>
     )

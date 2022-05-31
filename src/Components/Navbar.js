@@ -2,7 +2,7 @@ import { Nav, Navbar, Container } from 'react-bootstrap'
 
 const NavbarComponent = () => {
     return (
-        <Navbar expand="sm" bg="dark" variant="dark" className="fixed-top">
+        <Navbar expand="sm" bg="dark" variant="dark">
             <Container fluid>
                 <Navbar.Brand>Store Name Here</Navbar.Brand>
                 <Navbar.Collapse>

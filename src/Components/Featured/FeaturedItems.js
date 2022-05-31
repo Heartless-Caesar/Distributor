@@ -1,4 +1,4 @@
-import { Card, Container } from 'react-bootstrap'
+import { Card, Container, Row, Col } from 'react-bootstrap'
 import './Featureditems.css'
 const FeaturedItems = () => {
     return (
@@ -7,7 +7,7 @@ const FeaturedItems = () => {
                 <Card.Img
                     variant="top"
                     src="https://images.pexels.com/photos/10334838/pexels-photo-10334838.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                    className="text-start"
+                    className="text-start featured-img"
                 />
                 <Card.Body>
                     <Card.Title>Card title here</Card.Title>
