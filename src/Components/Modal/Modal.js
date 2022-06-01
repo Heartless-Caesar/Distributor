@@ -5,19 +5,21 @@ import { Button, Container, Modal, Form, Col, Row } from 'react-bootstrap'
 const ModalPages = (props) => {
     const [show, setShow] = useState(null)
     const [modalState, setModalState] = useState(null)
-    const handleClose = () => [setModalState(null), setShow(false)]
-    const handleShow = () => [setShow(true), setModalState(1)]
-    const nextPage = () => setModalState(2)
     const [state, setState] = useState({ unidadeTempo: 'Minutos' })
 
     function handleInputChange(event) {
         const target = event?.target
-        const value = target?.type == 'checkbox' ? target.checked : target.value
+        const value =
+            target?.type === 'checkbox' ? target.checked : target.value
         const name = target?.name
 
         state[name] = value
         setState(state)
     }
+
+    const handleClose = () => [setModalState(null), setShow(false)]
+    const handleShow = () => [setShow(true), setModalState(1)]
+    const nextPage = () => setModalState(2)
 
     return (
         <Container className="d-grid gap-2">
@@ -27,7 +29,7 @@ const ModalPages = (props) => {
             {modalState === 1 ? (
                 <Modal show={show} onHide={handleClose} size="lg">
                     <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
+                        <Modal.Title>Modal heading 2</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form>
@@ -74,6 +76,39 @@ const ModalPages = (props) => {
                                         <Form.Label>Porções</Form.Label>
                                         <Form.Control
                                             name="porcoes"
+                                            type="text"
+                                        />
+                                    </Form.Group>
+                                </Col>
+                            </Row>
+
+                            <Row>
+                                <Col md={4}>
+                                    <Form.Group>
+                                        <Form.Label>Quantidade</Form.Label>
+                                        <Form.Control
+                                            name="quantidade"
+                                            type="number"
+                                        />
+                                    </Form.Group>
+                                </Col>
+
+                                <Col md={5}>
+                                    <Form.Group>
+                                        <Form.Label>Ingredientes</Form.Label>
+                                        <Form.Control
+                                            name="ingrediente"
+                                            type="text"
+                                            onChange={handleInputChange}
+                                        />
+                                    </Form.Group>
+                                </Col>
+
+                                <Col md={2}>
+                                    <Form.Group>
+                                        <Form.Label>Unidade</Form.Label>
+                                        <Form.Control
+                                            name="unidade"
                                             type="text"
                                         />
                                     </Form.Group>
