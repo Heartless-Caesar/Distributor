@@ -6,6 +6,7 @@ const ModalPages = (props) => {
     const [show, setShow] = useState(null)
     const [modalState, setModalState] = useState(null)
     const [state, setState] = useState({ unidadeTempo: 'Minutos' })
+    const [fullscreen, setFullscreen] = useState(true)
 
     function handleInputChange(event) {
         const target = event?.target
@@ -20,16 +21,16 @@ const ModalPages = (props) => {
     const handleClose = () => [setModalState(null), setShow(false)]
     const handleShow = () => [setShow(true), setModalState(1)]
     const nextPage = () => setModalState(2)
-
+    const lastPage = () => setModalState(1)
     return (
         <Container className="d-grid gap-2">
             <Button variant="primary" onClick={handleShow} size="lg">
                 Launch add modal
             </Button>
             {modalState === 1 ? (
-                <Modal show={show} onHide={handleClose} size="lg">
+                <Modal show={show} onHide={handleClose} fullscreen={true}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Modal heading 2</Modal.Title>
+                        <Modal.Title>Modal heading 1</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form>
@@ -44,7 +45,6 @@ const ModalPages = (props) => {
                                         />
                                     </Form.Group>
                                 </Col>
-
                                 <Col md={2}>
                                     <Form.Group>
                                         <Form.Label>
@@ -81,39 +81,6 @@ const ModalPages = (props) => {
                                     </Form.Group>
                                 </Col>
                             </Row>
-
-                            <Row>
-                                <Col md={4}>
-                                    <Form.Group>
-                                        <Form.Label>Quantidade</Form.Label>
-                                        <Form.Control
-                                            name="quantidade"
-                                            type="number"
-                                        />
-                                    </Form.Group>
-                                </Col>
-
-                                <Col md={5}>
-                                    <Form.Group>
-                                        <Form.Label>Ingredientes</Form.Label>
-                                        <Form.Control
-                                            name="ingrediente"
-                                            type="text"
-                                            onChange={handleInputChange}
-                                        />
-                                    </Form.Group>
-                                </Col>
-
-                                <Col md={2}>
-                                    <Form.Group>
-                                        <Form.Label>Unidade</Form.Label>
-                                        <Form.Control
-                                            name="unidade"
-                                            type="text"
-                                        />
-                                    </Form.Group>
-                                </Col>
-                            </Row>
                             <Row>
                                 <Col md={5}>
                                     <Form.Group>
@@ -123,7 +90,6 @@ const ModalPages = (props) => {
                                             type="text"
                                         />
                                     </Form.Group>
-
                                     <Form.Group>
                                         <Form.Label>Modo de preparo</Form.Label>
                                         <textarea
@@ -146,26 +112,16 @@ const ModalPages = (props) => {
                                     </Form.Group>
                                 </Col>
                             </Row>
-                            <Button
-                                onClick={() => props.addReceitas(state)}
-                                variant="success"
-                                type="button"
-                            >
-                                Salvar
-                            </Button>
                         </Form>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
-                            Close
-                        </Button>
                         <Button variant="primary" onClick={nextPage}>
                             Next
                         </Button>
                     </Modal.Footer>
                 </Modal>
             ) : (
-                <Modal show={show} onHide={handleClose} size="lg">
+                <Modal show={show} onHide={handleClose} fullscreen={fullscreen}>
                     <Modal.Header closeButton>
                         <Modal.Title>Modal heading 2</Modal.Title>
                     </Modal.Header>
@@ -202,8 +158,8 @@ const ModalPages = (props) => {
                         </Form.Group>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
-                            Close
+                        <Button variant="secondary" onClick={lastPage}>
+                            Back
                         </Button>
                         <Button variant="primary" onClick={handleClose}>
                             Submit
