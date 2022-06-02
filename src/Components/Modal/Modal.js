@@ -6,7 +6,6 @@ const ModalPages = (props) => {
     const [show, setShow] = useState(null)
     const [modalState, setModalState] = useState(null)
     const [state, setState] = useState({ unidadeTempo: 'Minutos' })
-    const [fullscreen, setFullscreen] = useState(true)
 
     function handleInputChange(event) {
         const target = event?.target
@@ -30,7 +29,7 @@ const ModalPages = (props) => {
             {modalState === 1 ? (
                 <Modal show={show} onHide={handleClose} fullscreen={true}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Modal heading 1</Modal.Title>
+                        <Modal.Title>Informações gerais</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form>
@@ -81,7 +80,7 @@ const ModalPages = (props) => {
                                     </Form.Group>
                                 </Col>
                             </Row>
-                            <Row>
+                            <Row className="mt-5">
                                 <Col md={5}>
                                     <Form.Group>
                                         <Form.Label>Categoria</Form.Label>
@@ -90,15 +89,8 @@ const ModalPages = (props) => {
                                             type="text"
                                         />
                                     </Form.Group>
-                                    <Form.Group>
-                                        <Form.Label>Modo de preparo</Form.Label>
-                                        <textarea
-                                            onChange={handleInputChange}
-                                            name="modoPreparo"
-                                            className="form-control"
-                                        ></textarea>
-                                    </Form.Group>
                                 </Col>
+                                <Col md={1}></Col>
                                 <Col md={5}>
                                     <Form.Group>
                                         <Form.Label>
@@ -112,18 +104,39 @@ const ModalPages = (props) => {
                                     </Form.Group>
                                 </Col>
                             </Row>
+                            <Row>
+                                <Col className="col-6 mt-5">
+                                    <Form.Group>
+                                        <Form.Label>Modo de preparo</Form.Label>
+                                        <textarea
+                                            onChange={handleInputChange}
+                                            name="modoPreparo"
+                                            className="form-control"
+                                        ></textarea>
+                                    </Form.Group>
+                                </Col>
+                            </Row>
                         </Form>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="primary" onClick={nextPage}>
-                            Next
-                        </Button>
+                        <Col>
+                            <p>
+                                * A próxima página terá campos específicos para
+                                os ingredientes desta receita
+                            </p>
+                        </Col>
+                        <Col></Col>
+                        <Col className="text-end">
+                            <Button variant="primary" onClick={nextPage}>
+                                Next
+                            </Button>
+                        </Col>
                     </Modal.Footer>
                 </Modal>
             ) : (
-                <Modal show={show} onHide={handleClose} fullscreen={fullscreen}>
+                <Modal show={show} onHide={handleClose} fullscreen={true}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Modal heading 2</Modal.Title>
+                        <Modal.Title>Ingredientes associados</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form.Group>
